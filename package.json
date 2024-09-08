@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 8000"
   },
   "engines": {
     "node": ">=20.0.0"
