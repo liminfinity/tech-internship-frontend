@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "start": "npm run build && vite preview",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "npm run lint -- --fix && npm run format",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "npm run stylelint -- --fix && npm run format",
-    "start": "npm run build && vite preview",
     "server": "json-server --watch db.json --port 8000",
     "prepare": "husky"
   },
@@ -29,6 +29,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "concurrently": "^9.0.0",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.35.2",

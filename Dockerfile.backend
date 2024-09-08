@@ -1,0 +1,15 @@
+ARG NODE_VERSION=20-alpine
+
+FROM node:${NODE_VERSION} AS build
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm i
+
+COPY db.json .
+
+EXPOSE 8000
+
+CMD ["npm", "run", "server"]
