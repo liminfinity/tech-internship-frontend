@@ -1,8 +1,5 @@
-function App() {
+const App = () => {
+  return <span>hi!</span>;
+};
 
-  return (
-    <span>hi!</span>
-  )
-}
-
-export default App
+export default App;

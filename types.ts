@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 type Advertisment = {
   /* Уникальный идентификатор. */
   id: string;
