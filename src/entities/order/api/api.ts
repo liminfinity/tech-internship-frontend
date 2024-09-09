@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { KEEP_UNUSED_DATA_FOR, REDUCER_API_PATH } from './consts';
+import { KEEP_UNUSED_DATA_FOR, REDUCER_API_PATH } from './constants';
 import { baseQuery } from '@/shared/api';
 
 export const orderApi = createApi({
