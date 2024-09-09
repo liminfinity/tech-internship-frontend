@@ -1,4 +1,5 @@
 import { ROUTER_PATHS } from '@/shared/constants';
+import { joinPaths } from '@/shared/lib';
 import type { RouteObject } from 'react-router-dom';
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 
@@ -18,11 +19,15 @@ export const getRouter = () => {
       ),
       children: [
         {
+          index: true,
+          element: <Navigate to={ROUTER_PATHS.ADVERTISMENTS} />,
+        },
+        {
           path: ROUTER_PATHS.ADVERTISMENTS,
           element: <div>Объявления</div>,
         },
         {
-          path: ROUTER_PATHS.ADVERTISMENT,
+          path: joinPaths(ROUTER_PATHS.ADVERTISMENTS, ROUTER_PATHS.ADVERTISMENT),
           element: <div>Объявление</div>,
         },
         {
