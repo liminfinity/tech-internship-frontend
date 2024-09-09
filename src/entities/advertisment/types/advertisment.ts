@@ -1,6 +1,6 @@
-export type Advertisment = {
-  /* Уникальный идентификатор. */
-  id: string;
+import type { EntityId } from '@/shared/types';
+
+export type Advertisment = EntityId & {
   /* Название. */
   name: string;
   /* Описание. */
