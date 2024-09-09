@@ -1,4 +1,4 @@
-export type EntityId = {
+export type BaseEntity = {
   /* Уникальный идентификатор. */
   id: string;
 };

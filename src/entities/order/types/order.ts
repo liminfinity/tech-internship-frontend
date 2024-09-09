@@ -1,5 +1,5 @@
 import type { Advertisment } from '@/entities/advertisment';
-import type { EntityId } from '@/shared/types';
+import type { BaseEntity } from '@/shared/types';
 
 export const OrderStatus = {
   Created: 0,
@@ -11,7 +11,7 @@ export const OrderStatus = {
   Refund: 6,
 } as const;
 
-export type Order = EntityId & {
+export type Order = BaseEntity & {
   /* Статус. */
   status: (typeof OrderStatus)[keyof typeof OrderStatus];
   /* Дата и время создания. */

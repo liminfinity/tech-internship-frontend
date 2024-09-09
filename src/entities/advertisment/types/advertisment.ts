@@ -1,6 +1,6 @@
-import type { EntityId } from '@/shared/types';
+import type { BaseEntity } from '@/shared/types';
 
-export type Advertisment = EntityId & {
+export type Advertisment = BaseEntity & {
   /* Название. */
   name: string;
   /* Описание. */

@@ -1,2 +1,3 @@
 export type { JoinStrings } from './joinStrings';
-export type { EntityId } from './entityId';
+export type { BaseEntity } from './baseEntity';
+export type { Image } from './image';
