@@ -1,5 +1,9 @@
-import { RouterProvider } from './providers';
+import { ReduxProvider, RouterProvider } from './providers';
 
 export const App = () => {
-  return <RouterProvider />;
+  return (
+    <ReduxProvider>
+      <RouterProvider />
+    </ReduxProvider>
+  );
 };
