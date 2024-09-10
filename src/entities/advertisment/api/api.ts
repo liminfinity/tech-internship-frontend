@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { API_PATHS, KEEP_UNUSED_DATA_FOR, REDUCER_API_PATH, TAGS } from './constants';
-import { baseQuery } from '@/shared/api';
+import { baseQuery, METHODS } from '@/shared/api';
 import type {
   AddAdvertismentRequest,
   GetAdvertismentResponse,
@@ -40,7 +40,7 @@ export const advertismentApi = createApi({
     addAdvertisment: builder.mutation<void, AddAdvertismentRequest>({
       query: (newAdvertisment) => ({
         url: API_PATHS.ADD_ADVERTISMENT,
-        method: 'POST',
+        method: METHODS.POST,
         body: newAdvertisment,
       }),
       invalidatesTags: [TAGS.ADVERTISMENTS],
@@ -48,7 +48,7 @@ export const advertismentApi = createApi({
     updateAdvertisment: builder.mutation<void, UpdateAdvertismentRequest>({
       query: (updatedAdvertisment) => ({
         url: API_PATHS.UPDATE_ADVERTISMENT,
-        method: 'PATCH',
+        method: METHODS.PATCH,
         body: updatedAdvertisment,
       }),
       invalidatesTags: [TAGS.ADVERTISMENTS],
