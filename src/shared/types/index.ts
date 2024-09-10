@@ -3,3 +3,4 @@ export type { BaseEntity } from './baseEntity';
 export type { Image } from './image';
 export type { DefaultProps } from './defaultProps';
 export type { BaseSearchParams } from './params';
+export type { PaginationResponse } from './paginationResponse';

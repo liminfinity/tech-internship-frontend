@@ -9,3 +9,5 @@ export type {
   GetAdvertismentsRequest,
   UpdateAdvertismentRequest,
 } from './request';
+
+export type { GetAdvertismentResponse, GetAdvertismentsResponse } from './response';
