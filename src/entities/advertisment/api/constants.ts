@@ -10,3 +10,7 @@ export const API_PATHS = {
   ADD_ADVERTISMENT: BASE_URL,
   UPDATE_ADVERTISMENT: BASE_URL,
 } as const;
+
+export const TAGS = {
+  ADVERTISMENTS: 'advertisments',
+} as const;
