@@ -1,0 +1,4 @@
+@mixin stiky($top: initial, $right: initial, $bottom: initial, $left: initial) {
+  position: sticky;
+  inset: $top $right $bottom $left;
+}
