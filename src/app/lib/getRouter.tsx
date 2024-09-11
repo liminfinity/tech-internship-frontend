@@ -1,7 +1,8 @@
+import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
 import { joinPaths } from '@/shared/lib';
 import type { RouteObject } from 'react-router-dom';
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 export const getRouter = () => {
   const router: RouteObject[] = [];
@@ -12,11 +13,7 @@ export const getRouter = () => {
     },
     {
       path: ROUTER_PATHS.HOME,
-      element: (
-        <div>
-          Шапка главной <Outlet />
-        </div>
-      ),
+      element: <HomeLayout />,
       children: [
         {
           index: true,
