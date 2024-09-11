@@ -5,4 +5,5 @@ export const GAPS = {
 
 export const FONT_SIZES = {
   SM: 20,
+  LG: 60,
 } as const;
