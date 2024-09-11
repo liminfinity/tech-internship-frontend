@@ -1,0 +1,16 @@
+@use '../../shared/styles/mixins' as mixins;
+@use '../../shared/styles/variables' as vars;
+@use 'sass:map';
+
+.header {
+  @include mixins.stiky($top: 0);
+
+  z-index: map.get(vars.$zIndex, header);
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  flex: 1;
+  justify-content: flex-end;
+}
