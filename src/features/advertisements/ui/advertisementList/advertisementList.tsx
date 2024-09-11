@@ -3,27 +3,21 @@ import type { AdvertisementListProps } from './advertisementList.types';
 import { PendingErrorGuard } from '@/shared/ui';
 import { AdvertisementCard } from '@/entities/advertisement';
 import { Empty, List } from 'antd';
-import { ERROR_MESSAGE, LOADING_MESSAGE, NOT_FOUND_MESSAGE } from './advertisementList.constants';
-import type { ListGridType } from 'antd/es/list';
+import {
+  ERROR_MESSAGE,
+  GRID_SETTINGS,
+  LOADING_MESSAGE,
+  NOT_FOUND_MESSAGE,
+} from './advertisementList.constants';
 import { Link } from 'react-router-dom';
 import { joinPaths } from '@/shared/lib';
 import { ROUTER_PATHS } from '@/shared/constants';
 
-const GRID_SETTINGS: ListGridType = {
-  gutter: 16,
-  xs: 1,
-  sm: 2,
-  md: 4,
-  lg: 4,
-  xl: 6,
-  xxl: 3,
-};
-
 export const AdvertisementList = ({ className }: AdvertisementListProps) => {
-  const { name, page, perPage } = useAdvertisementsSearchParams();
+  const { q, page, perPage } = useAdvertisementsSearchParams();
 
   const { data, isError, isLoading, isSuccess } = useGetAdvertisementsQuery({
-    name,
+    q,
     page,
     perPage,
   });

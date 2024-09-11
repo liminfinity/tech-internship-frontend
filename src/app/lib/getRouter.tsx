@@ -1,4 +1,4 @@
-import { AdvertisementList } from '@/features/advertisements';
+import { AdvertisementList, AdvertisementSearch } from '@/features/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
 import { joinPaths } from '@/shared/lib';
@@ -24,7 +24,7 @@ export const getRouter = () => {
           path: ROUTER_PATHS.ADVERTISEMENTS,
           element: (
             <div>
-              Объявления <AdvertisementList />
+              Объявления <AdvertisementSearch /> <AdvertisementList />
             </div>
           ),
         },

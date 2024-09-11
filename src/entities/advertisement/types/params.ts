@@ -3,7 +3,7 @@ import type { BaseSearchParams, CamelToSnakeCase } from '@/shared/types';
 
 export type AdvertisementsSearchParams = BaseSearchParams &
   Partial<{
-    name: string;
+    q: string;
   }>;
 
 export type AdvertisementParams = {

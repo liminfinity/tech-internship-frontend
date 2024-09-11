@@ -1,7 +1,7 @@
 import {
   ADVERTISEMENT_PER_PAGE,
   ADVERTISEMENTS_SEARCH_PARAMS,
-  NAME_DEFAULT_VALUE,
+  Q_DEFAULT_VALUE,
   PAGE_DEFAULT_VALUE,
   PER_PAGE_DEFAULT_VALUE,
 } from '../constants';
@@ -45,7 +45,7 @@ const getPerPageOrDefault = (searchPerPage: string) => {
 export const useAdvertisementsSearchParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const name = searchParams.get(ADVERTISEMENTS_SEARCH_PARAMS.NAME) ?? undefined;
+  const q = searchParams.get(ADVERTISEMENTS_SEARCH_PARAMS.Q) ?? undefined;
 
   const page = getPageOrDefault(
     searchParams.get(ADVERTISEMENTS_SEARCH_PARAMS.PAGE) ?? PAGE_DEFAULT_VALUE.toString(),
@@ -58,15 +58,15 @@ export const useAdvertisementsSearchParams = () => {
   const formattedSearchParams: Partial<Record<AdvertisementsSearchParamsSnakeCase, string>> =
     useMemo(
       () => ({
-        name: name === NAME_DEFAULT_VALUE ? undefined : name,
+        q: q === Q_DEFAULT_VALUE ? undefined : q,
         page: page === PAGE_DEFAULT_VALUE ? undefined : page.toString(),
         per_page: perPage === PER_PAGE_DEFAULT_VALUE ? undefined : perPage.toString(),
       }),
-      [name, page, perPage],
+      [q, page, perPage],
     );
 
   const setAdvertisementsSearchParams = useCallback(
-    ({ page, name, perPage }: AdvertisementsSearchParams) => {
+    ({ page, q, perPage }: AdvertisementsSearchParams) => {
       const newSearchParams = formattedSearchParams;
       deleteAllEmptyFields(newSearchParams);
       if (page) {
@@ -76,11 +76,11 @@ export const useAdvertisementsSearchParams = () => {
           newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.PAGE] = page.toString();
         }
       }
-      if (name !== undefined) {
-        if (name === NAME_DEFAULT_VALUE) {
-          delete newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.NAME];
+      if (q !== undefined) {
+        if (q === Q_DEFAULT_VALUE) {
+          delete newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.Q];
         } else {
-          newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.NAME] = name;
+          newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.Q] = q;
         }
       }
       if (perPage) {
@@ -96,7 +96,7 @@ export const useAdvertisementsSearchParams = () => {
   );
 
   return {
-    name,
+    q,
     page,
     perPage,
     setAdvertisementsSearchParams,
