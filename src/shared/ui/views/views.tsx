@@ -1,15 +1,14 @@
-import { Flex, Typography } from 'antd';
 import type { ViewsProps } from './views.types';
 import { FaEye } from 'react-icons/fa';
-import { FONT_SIZES, GAPS } from '@/shared/constants';
-
-const { Text } = Typography;
+import { FONT_SIZES } from '@/shared/constants';
+import { IconText } from '../iconText';
 
 export const Views = ({ viewsCnt, className }: ViewsProps) => {
   return (
-    <Flex align="center" gap={GAPS.SM} className={className}>
-      <FaEye fontSize={FONT_SIZES.SM} />
-      <Text>{viewsCnt}</Text>
-    </Flex>
+    <IconText
+      icon={<FaEye fontSize={FONT_SIZES.SM} />}
+      text={viewsCnt.toString()}
+      className={className}
+    />
   );
 };

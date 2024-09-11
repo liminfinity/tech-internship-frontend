@@ -26,5 +26,9 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "src/entities/order/api/constants.ts"]
+  "include": [
+    "src",
+    "src/entities/order/api/constants.ts",
+    "src/features/advertisements/ui/advertisementList/.ts"
+  ]
 }

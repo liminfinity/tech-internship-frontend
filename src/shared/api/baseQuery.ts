@@ -3,5 +3,4 @@ import { SERVER_URL } from '../constants';
 
 export const baseQuery = RTKFetchBaseQuery({
   baseUrl: SERVER_URL,
-  credentials: 'include',
 });

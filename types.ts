@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-type Advertisment = {
+type Advertisement = {
   /* Уникальный идентификатор. */
   id: string;
   /* Название. */
@@ -28,7 +28,7 @@ const OrderStatus = {
   Refund: 6,
 } as const;
 
-type OrderItem = Advertisment & { count: number };
+type OrderItem = Advertisement & { count: number };
 
 type Order = {
   /* Уникальный идентификатор. */

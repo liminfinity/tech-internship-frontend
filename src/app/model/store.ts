@@ -1,14 +1,14 @@
-import { advertismentApi } from '@/entities/advertisment';
+import { advertisementApi } from '@/entities/advertisement';
 import { orderApi } from '@/entities/order';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const mainReducer = combineReducers({
-  [advertismentApi.reducerPath]: advertismentApi.reducer,
+  [advertisementApi.reducerPath]: advertisementApi.reducer,
   [orderApi.reducerPath]: orderApi.reducer,
 });
 
 export const store = configureStore({
   reducer: mainReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(advertismentApi.middleware, orderApi.middleware),
+    getDefaultMiddleware().concat(advertisementApi.middleware, orderApi.middleware),
 });
