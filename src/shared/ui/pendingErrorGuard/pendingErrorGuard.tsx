@@ -11,7 +11,7 @@ export const PendingErrorGuard = ({
   ...props
 }: PendingErrorGuardProps) => {
   return (
-    <Flex vertical align="center" {...props}>
+    <Flex vertical justify="center" {...props}>
       {isPending && (
         <Spin tip={pendingMessage} size="large">
           {Empty.PRESENTED_IMAGE_DEFAULT}

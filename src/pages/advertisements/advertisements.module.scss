@@ -1,3 +1,7 @@
+@use '../../shared/styles/mixins' as mixins;
+
 .layout {
   min-height: inherit;
+
+  @include mixins.container;
 }

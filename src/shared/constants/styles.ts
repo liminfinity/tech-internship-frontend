@@ -1,5 +1,8 @@
 export const GAPS = {
   SM: 8,
+  MD: 16,
+  LG: 24,
+  XL: 32,
   DEFAULT: 16,
 } as const;
 
