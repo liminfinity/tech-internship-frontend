@@ -13,7 +13,7 @@ const { Text } = Typography;
 export const AdvertisementCard = ({ advertisement, className }: AdvertisementCardProps) => {
   const { name, price, imageUrl, views, likes } = advertisement;
 
-  const altImg = `${name} image`;
+  const imgAlt = `Изображение ${name}`;
 
   const formattedPrice = formatPriceToRub(price);
 
@@ -21,7 +21,7 @@ export const AdvertisementCard = ({ advertisement, className }: AdvertisementCar
     <Card
       hoverable
       className={className}
-      cover={<ImageOrEmpty preview={false} src={imageUrl} alt={altImg} className={styles.image} />}>
+      cover={<ImageOrEmpty preview={false} src={imageUrl} alt={imgAlt} className={styles.image} />}>
       <Flex vertical>
         <Meta
           title={<Text ellipsis>{name}</Text>}
