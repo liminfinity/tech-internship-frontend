@@ -9,12 +9,29 @@ import { Pagination, type PaginationProps } from 'antd';
 import { useCallback } from 'react';
 
 export const AdvertisementPagination = ({ className }: AdvertisementPaginationProps) => {
-  const { name, page, perPage, setAdvertisementsSearchParams } = useAdvertisementsSearchParams();
+  const {
+    name,
+    page,
+    perPage,
+    likesGte,
+    likesLte,
+    viewsGte,
+    viewsLte,
+    priceGte,
+    priceLte,
+    setAdvertisementsSearchParams,
+  } = useAdvertisementsSearchParams();
 
   const { data: res } = useGetAdvertisementsQuery({
     name,
     page,
     perPage,
+    likesGte,
+    likesLte,
+    viewsGte,
+    viewsLte,
+    priceGte,
+    priceLte,
   });
 
   const handleShowSizeChange: Required<PaginationProps>['onShowSizeChange'] = useCallback(

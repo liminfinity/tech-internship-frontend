@@ -14,12 +14,19 @@ import { joinPaths } from '@/shared/lib';
 import { ROUTER_PATHS } from '@/shared/constants';
 
 export const AdvertisementList = ({ className }: AdvertisementListProps) => {
-  const { name, page, perPage } = useAdvertisementsSearchParams();
+  const { name, page, perPage, likesGte, likesLte, viewsGte, viewsLte, priceGte, priceLte } =
+    useAdvertisementsSearchParams();
 
   const { data, isError, isLoading, isSuccess } = useGetAdvertisementsQuery({
     name,
     page,
     perPage,
+    likesGte,
+    likesLte,
+    viewsGte,
+    viewsLte,
+    priceGte,
+    priceLte,
   });
 
   return (

@@ -9,13 +9,30 @@ import { SEARCH_WAITING_TIME } from './advertisementSearch.constants';
 const { Search } = Input;
 
 export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => {
-  const { name, page, perPage, setAdvertisementsSearchParams } = useAdvertisementsSearchParams();
+  const {
+    name,
+    page,
+    perPage,
+    likesGte,
+    likesLte,
+    viewsGte,
+    viewsLte,
+    priceGte,
+    priceLte,
+    setAdvertisementsSearchParams,
+  } = useAdvertisementsSearchParams();
   const [search, setSearch] = useState(name);
 
   const { isLoading } = useGetAdvertisementsQuery({
     name,
     page,
     perPage,
+    likesGte,
+    likesLte,
+    viewsGte,
+    viewsLte,
+    priceGte,
+    priceLte,
   });
 
   const handleChange: Required<SearchProps>['onChange'] = useCallback(({ target }) => {

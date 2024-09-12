@@ -2,6 +2,7 @@ import {
   AdvertisementList,
   AdvertisementSearch,
   AdvertisementPagination,
+  AdvertisementFilters,
 } from '@/features/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
@@ -28,7 +29,8 @@ export const getRouter = () => {
           path: ROUTER_PATHS.ADVERTISEMENTS,
           element: (
             <div>
-              Объявления <AdvertisementSearch /> <AdvertisementList /> <AdvertisementPagination />
+              Объявления <AdvertisementSearch /> <AdvertisementFilters /> <AdvertisementList />{' '}
+              <AdvertisementPagination />
             </div>
           ),
         },

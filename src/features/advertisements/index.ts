@@ -1,1 +1,6 @@
-export { AdvertisementList, AdvertisementSearch, AdvertisementPagination } from './ui';
+export {
+  AdvertisementList,
+  AdvertisementSearch,
+  AdvertisementPagination,
+  AdvertisementFilters,
+} from './ui';

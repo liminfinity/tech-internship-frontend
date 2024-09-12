@@ -11,6 +11,11 @@ export {
 
 export { useAdvertisementsSearchParams } from './hooks';
 
-export { AdvertisementCard } from './ui';
+export {
+  AdvertisementCard,
+  AdvertisementPriceFilter,
+  AdvertisementLikesFilter,
+  AdvertisementViewsFilter,
+} from './ui';
 
 export { ADVERTISEMENT_PER_PAGE } from './constants';

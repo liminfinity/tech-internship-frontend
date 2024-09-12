@@ -6,3 +6,4 @@ export type { BaseSearchParams } from './params';
 export type { PaginationResponse } from './paginationResponse';
 export type { CamelToSnakeCase } from './camelToSnakeCase';
 export type { AddUnderscoreToKeys } from './underscoreCertain';
+export type { Glthe } from './Glthe';

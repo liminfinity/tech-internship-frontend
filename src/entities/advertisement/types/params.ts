@@ -1,10 +1,12 @@
 import type { BasePerPage } from '@/shared/constants';
-import type { BaseSearchParams, CamelToSnakeCase } from '@/shared/types';
+import type { BaseSearchParams, CamelToSnakeCase, Glthe } from '@/shared/types';
 
 export type AdvertisementsSearchParams = BaseSearchParams &
-  Partial<{
-    name: string;
-  }>;
+  Partial<
+    Glthe<'price' | 'views' | 'likes', number> & {
+      name: string;
+    }
+  >;
 
 export type AdvertisementParams = {
   advertisementId: string;
