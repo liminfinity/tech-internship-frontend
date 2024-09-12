@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { OrderCard } from './orderCard';
 import { withRouter } from 'storybook-addon-remix-react-router';
 import { faker } from '@faker-js/faker';
-import { OrderStatus } from '../../types';
+import { ORDER_STATUS } from '../../constants';
 
 const meta = {
   component: OrderCard,
@@ -22,7 +22,7 @@ export const OrderCardDefault: Story = {
       id: faker.string.numeric(),
       total: +faker.commerce.price(),
       createdAt: faker.date.anytime().toISOString(),
-      status: faker.helpers.arrayElement(Object.values(OrderStatus)),
+      status: faker.helpers.arrayElement(Object.values(ORDER_STATUS)),
       deliveryWay: faker.helpers.arrayElement(['Почта', 'СДЭК']),
       items: [
         {
@@ -46,7 +46,7 @@ export const OrderFinishedCard: Story = {
       total: +faker.commerce.price(),
       createdAt: faker.date.anytime().toISOString(),
       finishedAt: faker.date.anytime().toISOString(),
-      status: faker.helpers.arrayElement(Object.values(OrderStatus)),
+      status: faker.helpers.arrayElement(Object.values(ORDER_STATUS)),
       deliveryWay: faker.helpers.arrayElement(['Почта', 'СДЭК']),
       items: [
         {
