@@ -1,11 +1,13 @@
 import type { BasePerPage } from '@/shared/constants';
 import type { BaseSearchParams, CamelToSnakeCase } from '@/shared/types';
-import type { OrderStatusKeys } from './order';
+import type { Order, OrderStatusKeys } from './order';
+
+export type OrdersSort = Extract<keyof Order, 'total'> | 'default';
 
 export type OrdersSearchParams = BaseSearchParams &
   Partial<{
-    status: OrderStatusKeys;
-    sort: number;
+    status: OrderStatusKeys | 'default';
+    sort: OrdersSort;
   }>;
 
 export type OrderPerPage = BasePerPage;
