@@ -5,8 +5,7 @@ import type { SearchProps } from 'antd/es/input';
 import { useCallback, useState } from 'react';
 import { useDebounceEffect } from 'ahooks';
 import { SEARCH_WAITING_TIME } from './advertisementSearch.constants';
-
-const { Search } = Input;
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => {
   const {
@@ -23,7 +22,7 @@ export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => 
   } = useAdvertisementsSearchParams();
   const [search, setSearch] = useState(name);
 
-  const { isLoading } = useGetAdvertisementsQuery({
+  useGetAdvertisementsQuery({
     name,
     page,
     perPage,
@@ -52,9 +51,8 @@ export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => 
   );
 
   return (
-    <Search
-      loading={isLoading}
-      enterButton
+    <Input
+      addonBefore={<FaMagnifyingGlass />}
       size="large"
       allowClear
       placeholder="Поиск объявлений"
