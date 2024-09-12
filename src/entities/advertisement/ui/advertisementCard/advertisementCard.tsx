@@ -4,6 +4,7 @@ import type { AdvertisementCardProps } from './advertisementCard.types';
 import { ImageOrEmpty, Likes, Views } from '@/shared/ui';
 import { GAPS } from '@/shared/constants';
 import { formatPriceToRub } from '@/shared/lib';
+import styles from './advertisementCard.module.scss';
 
 const { Meta } = Card;
 
@@ -17,7 +18,10 @@ export const AdvertisementCard = ({ advertisement, className }: AdvertisementCar
   const formattedPrice = formatPriceToRub(price);
 
   return (
-    <Card hoverable className={className} cover={<ImageOrEmpty src={imageUrl} alt={altImg} />}>
+    <Card
+      hoverable
+      className={className}
+      cover={<ImageOrEmpty preview={false} src={imageUrl} alt={altImg} className={styles.image} />}>
       <Flex vertical>
         <Meta
           title={<Text ellipsis>{name}</Text>}

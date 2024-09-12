@@ -51,8 +51,8 @@ export const advertisementApi = createApi({
       invalidatesTags: [TAGS.ADVERTISEMENTS],
     }),
     updateAdvertisement: builder.mutation<void, UpdateAdvertisementRequest>({
-      query: (updatedAdvertisement) => ({
-        url: API_PATHS.UPDATE_ADVERTISEMENT,
+      query: ({ advertisementId, ...updatedAdvertisement }) => ({
+        url: joinPaths(API_PATHS.GET_ADVERTISEMENT, advertisementId),
         method: METHODS.PATCH,
         body: updatedAdvertisement,
       }),

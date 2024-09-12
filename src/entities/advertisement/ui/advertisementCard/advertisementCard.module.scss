@@ -1,0 +1,7 @@
+@use '../../../../shared/styles/variables' as vars;
+@use 'sass:map';
+
+.image {
+  border-top-left-radius: map.get(vars.$border-radius, sm);
+  border-top-right-radius: map.get(vars.$border-radius, sm);
+}

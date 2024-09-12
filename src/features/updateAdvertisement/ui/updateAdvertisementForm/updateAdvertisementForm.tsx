@@ -1,45 +1,48 @@
 import { FormProvider, useForm } from 'react-hook-form';
-import type { AddAdvertisementFormProps } from './addAdvertisementForm.types';
+import type { UpdateAdvertisementFormProps } from './updateAdvertisementForm.types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
-  addAdvertisementSchema,
   AdvertisementFormFields,
-  useAddAdvertisementMutation,
-  type AddAdvertisementForm as TAddAdvertisementForm,
+  updateAdvertisementSchema,
+  useUpdateAdvertisementMutation,
+  type UpdateAdvertisementForm as TUpdateAdvertisementForm,
   AdvertisementFormButtonGroup,
 } from '@/entities/advertisement';
 import { useCallback } from 'react';
 import { Flex } from 'antd';
 import { GAPS } from '@/shared/constants';
 
-export const AddAdvertisementForm = ({ onSubmit, className }: AddAdvertisementFormProps) => {
-  const methods = useForm<TAddAdvertisementForm>({
-    defaultValues: {
-      name: '',
-    },
+export const UpdateAdvertisementForm = ({
+  updatedAdvertisement,
+  advertisementId,
+  onSubmit,
+  className,
+}: UpdateAdvertisementFormProps) => {
+  const methods = useForm<TUpdateAdvertisementForm>({
+    defaultValues: updatedAdvertisement,
     mode: 'onSubmit',
     criteriaMode: 'all',
     shouldUseNativeValidation: false,
     shouldUnregister: true,
     shouldFocusError: true,
-    resolver: zodResolver(addAdvertisementSchema),
+    resolver: zodResolver(updateAdvertisementSchema),
   });
 
   const { handleSubmit, reset, formState } = methods;
 
-  const { isValid, dirtyFields } = formState;
+  const { isDirty } = formState;
 
-  const isSubmitDisabled = !(dirtyFields?.name && dirtyFields?.price) || !isValid;
+  const isSubmitDisabled = !isDirty;
 
-  const [addAdvertisement] = useAddAdvertisementMutation();
+  const [updateAdvertisement] = useUpdateAdvertisementMutation();
 
-  const handleAddAdvertisement = useCallback(
-    async (newAdvertisement: TAddAdvertisementForm) => {
-      await addAdvertisement(newAdvertisement);
+  const handleUpdateAdvertisement = useCallback(
+    async (updatedAdvertisement: TUpdateAdvertisementForm) => {
+      await updateAdvertisement({ ...updatedAdvertisement, advertisementId });
       reset();
       onSubmit?.();
     },
-    [addAdvertisement, onSubmit, reset],
+    [updateAdvertisement, onSubmit, reset, advertisementId],
   );
 
   const handleReset = useCallback(() => {
@@ -55,7 +58,7 @@ export const AddAdvertisementForm = ({ onSubmit, className }: AddAdvertisementFo
     <FormProvider {...methods}>
       <Flex
         component={'form'}
-        onSubmit={handleSubmit(handleAddAdvertisement)}
+        onSubmit={handleSubmit(handleUpdateAdvertisement)}
         vertical
         gap={GAPS.MD}
         className={className}>

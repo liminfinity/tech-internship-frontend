@@ -3,6 +3,7 @@ export type {
   ShortAdvertisement,
   AdvertisementPerPage,
   AddAdvertisementForm,
+  UpdateAdvertisementForm,
 } from './types';
 
 export {
@@ -23,10 +24,12 @@ export {
   AdvertisementViewsFilter,
   AdvertisementDetails,
   AdvertisementInfo,
+  AdvertisementFormFields,
+  AdvertisementFormButtonGroup,
 } from './ui';
 
 export { ADVERTISEMENT_PER_PAGE } from './constants';
 
-export { addAdvertisementSchema } from './validation';
+export { addAdvertisementSchema, updateAdvertisementSchema } from './validation';
 
 export { getAdvertisementDetails, getAdvertisementInfo } from './lib';

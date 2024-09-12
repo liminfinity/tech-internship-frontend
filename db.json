@@ -66,7 +66,7 @@
       "createdAt": "2024-08-12T14:16:55.351Z",
       "views": 20000,
       "likes": 1,
-      "imageUrl": ""
+      "imageUrl": "https://i06.fotocdn.net/s205/94a92d5ade84ce23/public_pin_l/2362727257.jpg"
     },
     {
       "id": "8",
@@ -81,6 +81,16 @@
       "id": "b7bc",
       "name": "c7f7r7f",
       "price": 3545
+    },
+    {
+      "id": "d263",
+      "name": "afaf",
+      "price": 213
+    },
+    {
+      "id": "27c7",
+      "name": "313",
+      "price": 77
     }
   ],
   "orders": [

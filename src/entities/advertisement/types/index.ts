@@ -5,7 +5,7 @@ export type {
   AdvertisementInfo,
 } from './advertisement';
 
-export type { AddAdvertisementForm, UpdateAdvertisementForm } from './form';
+export type { AddAdvertisementForm, UpdateAdvertisementForm, AdvertisementForm } from './form';
 
 export type {
   AdvertisementParams,
