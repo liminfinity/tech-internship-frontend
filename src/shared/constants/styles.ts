@@ -10,3 +10,7 @@ export const FONT_SIZES = {
   SM: 20,
   LG: 60,
 } as const;
+
+export const WIDTHS = {
+  MODAL: 800,
+} as const;

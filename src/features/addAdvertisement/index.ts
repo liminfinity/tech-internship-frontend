@@ -1,1 +1,1 @@
-export { AddAdvertisementForm } from './ui';
+export { AddAdvertisementButton } from './ui';

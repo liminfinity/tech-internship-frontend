@@ -10,9 +10,7 @@ export const ErrorPanel = ({ description = 'Произошла ошибка', cl
   return (
     <Flex align="center" vertical gap={GAPS.SM} className={className}>
       <HiOutlineEmojiSad fontSize={FONT_SIZES.LG} className={styles.icon} />
-      <Text strong className={styles.description}>
-        {description}
-      </Text>
+      <Text strong>{description}</Text>
     </Flex>
   );
 };

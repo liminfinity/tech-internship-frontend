@@ -4,14 +4,12 @@ import type { AddAdvertisementForm as TAddAdvertisementForm } from '@/entities/a
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addAdvertisementSchema, useAddAdvertisementMutation } from '@/entities/advertisement';
 import { useCallback } from 'react';
-import { Button, Flex, type InputNumberProps, Typography } from 'antd';
+import { Button, Flex, type InputNumberProps } from 'antd';
 import { RHFInput, RHFInputNumber, RHFTextArea } from '@/shared/ui';
 import { FaRegPenToSquare, FaRegImage, FaRubleSign } from 'react-icons/fa6';
 import { GAPS } from '@/shared/constants';
 import { PRICE_MIN_VALUE } from './addAdvertisementForm.constants';
 import styles from './addAdvertisementForm.module.scss';
-
-const { Text } = Typography;
 
 const formatter: Required<InputNumberProps>['formatter'] = (value) =>
   `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -42,14 +40,20 @@ export const AddAdvertisementForm = ({ onSubmit, className }: AddAdvertisementFo
   const handleAddAdvertisement = useCallback(
     async (newAdvertisement: TAddAdvertisementForm) => {
       await addAdvertisement(newAdvertisement);
+      reset();
       onSubmit?.();
     },
-    [addAdvertisement, onSubmit],
+    [addAdvertisement, onSubmit, reset],
   );
 
   const handleReset = useCallback(() => {
     reset();
   }, [reset]);
+
+  const handleCancel = useCallback(() => {
+    reset();
+    onSubmit?.();
+  }, [reset, onSubmit]);
 
   return (
     <FormProvider {...methods}>
@@ -91,11 +95,14 @@ export const AddAdvertisementForm = ({ onSubmit, className }: AddAdvertisementFo
           prefix={<FaRegImage />}
         />
         <Flex align="center" justify="flex-end" gap={GAPS.MD}>
+          <Button htmlType="button" onClick={handleCancel}>
+            Отменить
+          </Button>
           <Button htmlType="reset" onClick={handleReset} disabled={isResetDisabled}>
-            <Text>Очистить</Text>
+            Очистить
           </Button>
           <Button type="primary" htmlType="submit" loading={isLoading} disabled={isSubmitDisabled}>
-            <Text>Создать</Text>
+            Создать
           </Button>
         </Flex>
       </Flex>

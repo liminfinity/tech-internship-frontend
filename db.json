@@ -76,47 +76,6 @@
       "views": 200000,
       "likes": 302,
       "imageUrl": ""
-    },
-    {
-      "id": "0c0b",
-      "name": "313",
-      "price": 997
-    },
-    {
-      "id": "a889",
-      "name": "313",
-      "price": 997
-    },
-    {
-      "id": "67a2",
-      "name": "313",
-      "price": 997,
-      "description": "twqgwg"
-    },
-    {
-      "id": "2ec2",
-      "name": "fafa",
-      "price": 31,
-      "description": "fqfafa"
-    },
-    {
-      "id": "6325",
-      "imageUrl": "https://avatars.mds.yandex.net/i?id=4f7586d49edaa427e07a8819562fc284_l-5248434-images-thumbs&n=13",
-      "name": "fafa",
-      "price": 31,
-      "description": "fqfafa"
-    },
-    {
-      "id": "3ede",
-      "imageUrl": "https://avatars.mds.yandex.net/i?id=4f7586d49edaa427e07a8819562fc284_l-5248434-images-thumbs&n=13",
-      "name": "fafa",
-      "price": 31,
-      "description": "fqfafa"
-    },
-    {
-      "id": "7c87",
-      "name": "dafa",
-      "price": 0
     }
   ],
   "orders": [
