@@ -1,1 +1,1 @@
-export { OrderList, OrderPagination } from './ui';
+export { OrderList, OrderPagination, OrderFilters } from './ui';

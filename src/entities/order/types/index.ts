@@ -1,11 +1,4 @@
-export {
-  type Order,
-  type OrderItem,
-  OrderStatus,
-  OrderStatusRu,
-  type OrderStatusKeys,
-  type OrderStatusValues,
-} from './order';
+export { type Order, type OrderItem, type OrderStatusKeys, type OrderStatusValues } from './order';
 
 export type { GetOrdersRequest } from './request';
 
@@ -16,4 +9,6 @@ export type {
   OrdersSearchParams,
   OrdersSearchParamsSnakeCase,
   OrdersSort,
+  OrdersSortLabel,
+  OrderStatusLabel,
 } from './params';

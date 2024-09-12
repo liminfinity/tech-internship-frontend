@@ -1,9 +1,9 @@
-export type { Order, OrderItem, OrderStatus, OrderPerPage } from './types';
+export type { Order, OrderItem, OrderPerPage } from './types';
 
 export { orderApi, REDUCER_API_PATH, useGetOrdersQuery } from './api';
 
 export { useOrdersSearchParams } from './hooks';
 
-export { ORDERS_PER_PAGE } from './constants';
+export { ORDERS_PER_PAGE, ORDER_STATUS, ORDER_STATUS_CODE, ORDER_STATUS_LABEL } from './constants';
 
-export { OrderCard } from './ui';
+export { OrderCard, OrderSortSelect, OrderStatusSelect } from './ui';

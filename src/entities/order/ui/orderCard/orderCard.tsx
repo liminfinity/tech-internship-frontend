@@ -2,8 +2,8 @@ import { Card, Flex, Typography } from 'antd';
 import type { OrderCardProps } from './orderCard.types';
 import { GAPS } from '@/shared/constants';
 import { formatPriceToRub, formatToCreatedAt } from '@/shared/lib';
-import { OrderStatusRu } from '../../types';
 import { OrderItemsButton } from '../orderItemsButton';
+import { ORDER_STATUS_CODE } from '../../constants';
 
 const { Text } = Typography;
 
@@ -16,7 +16,7 @@ export const OrderCard = ({ order, className }: OrderCardProps) => {
 
   const formattedTotal = `Общая стоимость: ${formatPriceToRub(total)}`;
 
-  const formattedStatus = `Статус: ${OrderStatusRu[status]}`;
+  const formattedStatus = `Статус: ${ORDER_STATUS_CODE[status]}`;
 
   const formattedDeliveryWay = `Способ доставки: ${deliveryWay}`;
 

@@ -6,13 +6,13 @@ import {
   PER_PAGE_DEFAULT_VALUE,
   SORT_DEFAULT_VALUE,
   STATUS_DEFAULT_VALUE,
+  ORDER_STATUS,
 } from '../constants';
 import {
   type OrderPerPage,
   type OrdersSearchParamsSnakeCase,
   type OrdersSearchParams,
   type OrdersSort,
-  OrderStatus,
   type OrderStatusValues,
 } from '../types';
 import { deleteAllEmptyFields, isInteger } from '@/shared/lib';
@@ -59,9 +59,9 @@ const getSortOrDefault = (searchSort: string) => {
   return sort;
 };
 
-const STATUSES = Object.values(OrderStatus);
+const STATUSES = Object.values(ORDER_STATUS);
 
-const getStatusOrDefault = (searchStatus?: string) => {
+const getStatusOrDefault = (searchStatus: string) => {
   let status: OrdersSearchParams['status'];
   if (searchStatus !== STATUS_DEFAULT_VALUE) {
     if (STATUSES.includes(+searchStatus as OrderStatusValues)) {
@@ -129,10 +129,12 @@ export const useOrdersSearchParams = () => {
           newSearchParams[ORDERS_SEARCH_PARAMS.SORT] = sort.toString();
         }
       }
-      if (status === STATUS_DEFAULT_VALUE) {
-        delete newSearchParams[ORDERS_SEARCH_PARAMS.STATUS];
-      } else {
-        newSearchParams[ORDERS_SEARCH_PARAMS.STATUS] = status.toString();
+      if (status !== undefined) {
+        if (status === STATUS_DEFAULT_VALUE) {
+          delete newSearchParams[ORDERS_SEARCH_PARAMS.STATUS];
+        } else {
+          newSearchParams[ORDERS_SEARCH_PARAMS.STATUS] = status.toString();
+        }
       }
       setSearchParams(newSearchParams);
     },

@@ -2,7 +2,7 @@ import { Flex } from 'antd';
 import type { OrdersPanelProps } from './ordersPanel.types';
 import styles from './ordersPanel.module.scss';
 import { GAPS } from '@/shared/constants';
-import { OrderList, OrderPagination } from '@/features/orders';
+import { OrderFilters, OrderList, OrderPagination } from '@/features/orders';
 
 export const OrdersPanel = ({ className }: OrdersPanelProps) => {
   return (
@@ -13,6 +13,7 @@ export const OrdersPanel = ({ className }: OrdersPanelProps) => {
         justify="space-between"
         gap={GAPS.DEFAULT}
         component={'main'}>
+        <OrderFilters className={styles.filters} />
         <OrderList className={styles.list} />
       </Flex>
       <OrderPagination />
