@@ -9,8 +9,7 @@ import type {
   GetAdvertisementsResponse,
   UpdateAdvertisementRequest,
 } from '../types';
-import { joinPaths } from '@/shared/lib';
-import { toParamsRequest } from '../lib';
+import { joinPaths, toParamsRequest } from '@/shared/lib';
 import snakify from 'snakify-ts';
 
 const TAG_TYPES = Object.values(TAGS);

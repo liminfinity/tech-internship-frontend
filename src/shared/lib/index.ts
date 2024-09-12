@@ -4,3 +4,4 @@ export { isInteger } from './isInteger';
 export { deleteAllEmptyFields } from './deleteAllEmptyFields';
 export { formatPriceToRub } from './formatPriceToRub';
 export { formatToCreatedAt } from './formatToCreatedAt';
+export { toParamsRequest } from './toParamsRequest';

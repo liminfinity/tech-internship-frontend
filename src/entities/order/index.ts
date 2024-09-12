@@ -1,3 +1,3 @@
 export type { Order, OrderItem, OrderStatus } from './types';
 
-export { orderApi, REDUCER_API_PATH } from './api';
+export { orderApi, REDUCER_API_PATH, useGetOrdersQuery } from './api';
