@@ -35,7 +35,7 @@ export const AdvertisementPriceFilter = ({ className }: AdvertisementPriceFilter
 
   return (
     <RangeSlider
-      label="Цена, руб."
+      label="Цена, ₽"
       min={PRICE_GTE_DEFAULT_VALUE}
       max={PRICE_LTE_DEFAULT_VALUE}
       value={[filterPriceGte, filterPriceLte]}

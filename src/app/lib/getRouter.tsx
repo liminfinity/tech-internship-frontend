@@ -1,9 +1,4 @@
-import {
-  AdvertisementList,
-  AdvertisementSearch,
-  AdvertisementPagination,
-  AdvertisementFilters,
-} from '@/features/advertisements';
+import { AdvertisementsPage } from '@/pages/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
 import { joinPaths } from '@/shared/lib';
@@ -27,12 +22,7 @@ export const getRouter = () => {
         },
         {
           path: ROUTER_PATHS.ADVERTISEMENTS,
-          element: (
-            <div>
-              Объявления <AdvertisementSearch /> <AdvertisementFilters /> <AdvertisementList />{' '}
-              <AdvertisementPagination />
-            </div>
-          ),
+          element: <AdvertisementsPage />,
         },
         {
           path: joinPaths(ROUTER_PATHS.ADVERTISEMENTS, ROUTER_PATHS.ADVERTISEMENT),

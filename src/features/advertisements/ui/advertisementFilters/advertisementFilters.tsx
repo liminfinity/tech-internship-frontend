@@ -8,10 +8,10 @@ import { Flex } from 'antd';
 
 export const AdvertisementFilters = ({ className }: AdvertisementFiltersProps) => {
   return (
-    <Flex className={className} vertical justify="space-between">
+    <Flex className={className} vertical>
       <AdvertisementPriceFilter />
-      <AdvertisementViewsFilter />
       <AdvertisementLikesFilter />
+      <AdvertisementViewsFilter />
     </Flex>
   );
 };

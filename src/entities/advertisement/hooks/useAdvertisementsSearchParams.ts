@@ -143,7 +143,7 @@ export const useAdvertisementsSearchParams = () => {
           newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.PER_PAGE] = perPage.toString();
         }
       }
-      if (likesGte) {
+      if (likesGte !== undefined) {
         if (likesGte === LIKES_GTE_DEFAULT_VALUE) {
           delete newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.LIKES_GTE];
         } else {
@@ -157,7 +157,7 @@ export const useAdvertisementsSearchParams = () => {
           newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.LIKES_LTE] = likesLte.toString();
         }
       }
-      if (priceGte) {
+      if (priceGte !== undefined) {
         if (priceGte === PRICE_GTE_DEFAULT_VALUE) {
           delete newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.PRICE_GTE];
         } else {
@@ -171,7 +171,7 @@ export const useAdvertisementsSearchParams = () => {
           newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.PRICE_LTE] = priceLte.toString();
         }
       }
-      if (viewsGte) {
+      if (viewsGte !== undefined) {
         if (viewsGte === VIEWS_GTE_DEFAULT_VALUE) {
           delete newSearchParams[ADVERTISEMENTS_SEARCH_PARAMS.VIEWS_GTE];
         } else {
