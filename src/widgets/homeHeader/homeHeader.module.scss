@@ -5,12 +5,11 @@
 .header {
   @include mixins.stiky($top: 0);
 
-  z-index: map.get(vars.$zIndex, header);
+  z-index: map.get(vars.$z-index, header);
   display: flex;
   align-items: center;
 }
 
 .menu {
   flex: 1;
-  justify-content: flex-end;
 }

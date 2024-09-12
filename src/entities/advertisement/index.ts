@@ -1,4 +1,9 @@
-export type { Advertisement, ShortAdvertisement, AdvertisementPerPage } from './types';
+export type {
+  Advertisement,
+  ShortAdvertisement,
+  AdvertisementPerPage,
+  AddAdvertisementForm,
+} from './types';
 
 export {
   REDUCER_API_PATH,
@@ -19,3 +24,5 @@ export {
 } from './ui';
 
 export { ADVERTISEMENT_PER_PAGE } from './constants';
+
+export { addAdvertisementSchema } from './validation';
