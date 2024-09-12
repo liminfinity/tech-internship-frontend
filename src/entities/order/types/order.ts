@@ -1,19 +1,14 @@
 import type { Advertisement } from '@/entities/advertisement';
 import type { BaseEntity } from '@/shared/types';
+import type { ORDER_STATUS } from '../constants';
 
-export const OrderStatus = {
-  Created: 0,
-  Paid: 1,
-  Transport: 2,
-  DeliveredToThePoint: 3,
-  Received: 4,
-  Archived: 5,
-  Refund: 6,
-} as const;
+export type OrderStatusKeys = keyof typeof ORDER_STATUS;
+
+export type OrderStatusValues = (typeof ORDER_STATUS)[keyof typeof ORDER_STATUS];
 
 export type Order = BaseEntity & {
   /* Статус. */
-  status: (typeof OrderStatus)[keyof typeof OrderStatus];
+  status: OrderStatusValues;
   /* Дата и время создания. */
   createdAt: string;
   /* Дата и время завершения. */

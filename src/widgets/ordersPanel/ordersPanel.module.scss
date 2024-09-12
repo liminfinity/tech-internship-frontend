@@ -1,0 +1,20 @@
+@use '../../shared/styles/mixins' as mixins;
+@use '../../shared/styles/variables' as vars;
+@use 'sass:map';
+
+.main {
+  align-self: stretch;
+}
+
+.filters {
+  flex-basis: 25%;
+}
+
+.list {
+  flex-basis: 70%;
+}
+
+.search {
+  width: 50%;
+  align-self: flex-start;
+}
