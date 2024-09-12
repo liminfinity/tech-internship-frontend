@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# Тестовое задание для стажёра Frontend разработчика в Авито
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Суть задания
 
-Currently, two official plugins are available:
+   Разработать личный кабинет продавца на маркетплейсе, в котором есть возможность управлять своими объявлениями и заказами.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск
 
-## Expanding the ESLint configuration
+   - Склонировать ветку master;
+   - Создать *.env.development.local* (разработка) и *.env.production.local* (продакшн) файлы;
+   - Установить переменные окружения, указанные под комментарием *# .env.development.local / .env.production.local* в *.env.example*;
+   - Без докера:
+      1. ```npm i``` (установка зависимостей);
+      2. ```npm run server``` (запуск сервера);
+      3.
+         - ```npm run dev``` (разработка, 5173 порт).
+         - ```npm run start``` (продакшн, 80 порт).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   - С докером:
+      1. ```docker-compose up```.
 
-- Configure the top-level `parserOptions` property like this:
+## Использованные технологии
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+   1. React + React-router-dom;
+   2. TypeScript;
+   3. Redux Toolkit + RTK Query;
+   4. React-hook-form + zod;
+   5. Eslint + Prettier;
+   6. Husky + Lint-staged;
+   7. Docker + Docker-compose;
+   8. Ant Design + SCSS modules;
+   9. FSD архитектура;
+   10. Storybook.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Страницы
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+   1. */advertisements* - мои объявления;
+   2. */advertisements/:advertisementId* - объявление;
+   3. */orders* - мои заказы.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+## Дополнительно
+
+   Для просмотра реализованных компонентов необходимо использовать команду ```npm run sb```. В результате на 6006 порту откроется Storybook
+
+
