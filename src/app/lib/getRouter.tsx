@@ -1,6 +1,7 @@
 import { AdvertisementPage } from '@/pages/advertisement';
 import { AdvertisementsPage } from '@/pages/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
+import { OrdersPage } from '@/pages/orders';
 import { ROUTER_PATHS } from '@/shared/constants';
 import { joinPaths } from '@/shared/lib';
 import type { RouteObject } from 'react-router-dom';
@@ -31,7 +32,7 @@ export const getRouter = () => {
         },
         {
           path: ROUTER_PATHS.ORDERS,
-          element: <div>Заказы</div>,
+          element: <OrdersPage />,
         },
       ],
     },

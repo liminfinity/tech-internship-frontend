@@ -28,8 +28,8 @@ export const OrderCard = ({ order, className }: OrderCardProps) => {
           <Text>{formattedTotal}</Text>
           <Text type="secondary">{formattedCreatedAt}</Text>
           <Text>{formattedDeliveryWay}</Text>
+          {finishedAt && <Text type="success">{finishedText}</Text>}
           <OrderItemsButton orderItems={items} />
-          {finishedAt && <Text>{finishedText}</Text>}
         </Flex>
       </Flex>
     </Card>

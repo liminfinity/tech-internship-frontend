@@ -13,7 +13,7 @@ import {
   type OrdersSearchParams,
   type OrdersSort,
   OrderStatus,
-  type OrderStatusKeys,
+  type OrderStatusValues,
 } from '../types';
 import { deleteAllEmptyFields, isInteger } from '@/shared/lib';
 import { useCallback, useMemo } from 'react';
@@ -59,15 +59,20 @@ const getSortOrDefault = (searchSort: string) => {
   return sort;
 };
 
-const STATUSES = Object.keys(OrderStatus);
+const STATUSES = Object.values(OrderStatus);
 
-const getStatusOrDefault = (searchStatus: string) => {
-  let status: OrderStatusKeys;
-  if (STATUSES.includes(searchStatus as OrderStatusKeys)) {
-    status = searchStatus as OrderStatusKeys;
+const getStatusOrDefault = (searchStatus?: string) => {
+  let status: OrdersSearchParams['status'];
+  if (searchStatus !== STATUS_DEFAULT_VALUE) {
+    if (STATUSES.includes(+searchStatus as OrderStatusValues)) {
+      status = +searchStatus as OrderStatusValues;
+    } else {
+      status = STATUS_DEFAULT_VALUE;
+    }
   } else {
     status = STATUS_DEFAULT_VALUE;
   }
+
   return status;
 };
 
@@ -86,7 +91,7 @@ export const useOrdersSearchParams = () => {
   const sort = getSortOrDefault(searchParams.get(ORDERS_SEARCH_PARAMS.SORT) ?? ORDERS_SORT.DEFAULT);
 
   const status = getStatusOrDefault(
-    searchParams.get(ORDERS_SEARCH_PARAMS.STATUS) ?? STATUS_DEFAULT_VALUE.toString(),
+    searchParams.get(ORDERS_SEARCH_PARAMS.STATUS) ?? STATUS_DEFAULT_VALUE,
   );
 
   const formattedSearchParams: Partial<Record<OrdersSearchParamsSnakeCase, string>> = useMemo(
@@ -124,12 +129,10 @@ export const useOrdersSearchParams = () => {
           newSearchParams[ORDERS_SEARCH_PARAMS.SORT] = sort.toString();
         }
       }
-      if (status) {
-        if (status === STATUS_DEFAULT_VALUE) {
-          delete newSearchParams[ORDERS_SEARCH_PARAMS.STATUS];
-        } else {
-          newSearchParams[ORDERS_SEARCH_PARAMS.STATUS] = status.toString();
-        }
+      if (status === STATUS_DEFAULT_VALUE) {
+        delete newSearchParams[ORDERS_SEARCH_PARAMS.STATUS];
+      } else {
+        newSearchParams[ORDERS_SEARCH_PARAMS.STATUS] = status.toString();
       }
       setSearchParams(newSearchParams);
     },

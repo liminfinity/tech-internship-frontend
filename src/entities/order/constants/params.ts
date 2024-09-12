@@ -22,4 +22,4 @@ export const PER_PAGE_DEFAULT_VALUE = ORDERS_PER_PAGE[0];
 
 export const SORT_DEFAULT_VALUE = ORDERS_SORT.DEFAULT;
 
-export const STATUS_DEFAULT_VALUE = 'Created';
+export const STATUS_DEFAULT_VALUE = undefined;
