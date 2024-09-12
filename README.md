@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# Тестовое задание для стажёра Frontend разработчика в Авито
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Суть задания
 
-Currently, two official plugins are available:
+Разработать личный кабинет продавца на маркетплейсе, в котором есть возможность управлять своими объявлениями и заказами.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск
 
-## Expanding the ESLint configuration
+- Склонировать ветку master;
+- Создать _.env.development.local_ (разработка) и _.env.production.local_ (продакшн) файлы;
+- Установить переменные окружения, указанные под комментарием _# .env.development.local / .env.production.local_ в _.env.example_;
+- Без докера:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  1. `npm i` (установка зависимостей);
+  2. `npm run server` (запуск сервера);
+  3. - `npm run dev` (разработка, 5173 порт).
+     - `npm run start` (продакшн, 80 порт).
 
-- Configure the top-level `parserOptions` property like this:
+- С докером:
+  1. `docker-compose up`.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## Использованные технологии
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1.  React + React-router-dom;
+2.  TypeScript;
+3.  Redux Toolkit + RTK Query;
+4.  React-hook-form + zod;
+5.  Eslint + Prettier;
+6.  Husky + Lint-staged;
+7.  Docker + Docker-compose;
+8.  Ant Design + SCSS modules;
+9.  FSD архитектура;
+10. Storybook.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+## Страницы
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+1.  _/advertisements_ - мои объявления;
+2.  _/advertisements/:advertisementId_ - объявление;
+3.  _/orders_ - мои заказы.
+
+## Дополнительно
+
+Для просмотра реализованных компонентов необходимо использовать команду `npm run sb`. В результате на 6006 порту откроется Storybook
