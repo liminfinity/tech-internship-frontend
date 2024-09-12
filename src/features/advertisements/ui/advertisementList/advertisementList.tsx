@@ -14,10 +14,10 @@ import { joinPaths } from '@/shared/lib';
 import { ROUTER_PATHS } from '@/shared/constants';
 
 export const AdvertisementList = ({ className }: AdvertisementListProps) => {
-  const { q, page, perPage } = useAdvertisementsSearchParams();
+  const { name, page, perPage } = useAdvertisementsSearchParams();
 
   const { data, isError, isLoading, isSuccess } = useGetAdvertisementsQuery({
-    q,
+    name,
     page,
     perPage,
   });

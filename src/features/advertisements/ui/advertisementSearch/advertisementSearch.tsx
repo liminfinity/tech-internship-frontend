@@ -9,11 +9,11 @@ import { SEARCH_WAITING_TIME } from './advertisementSearch.constants';
 const { Search } = Input;
 
 export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => {
-  const { q, page, perPage, setAdvertisementsSearchParams } = useAdvertisementsSearchParams();
-  const [search, setSearch] = useState(q);
+  const { name, page, perPage, setAdvertisementsSearchParams } = useAdvertisementsSearchParams();
+  const [search, setSearch] = useState(name);
 
   const { isLoading } = useGetAdvertisementsQuery({
-    q,
+    name,
     page,
     perPage,
   });
@@ -25,7 +25,7 @@ export const AdvertisementSearch = ({ className }: AdvertisementSearchProps) => 
   useDebounceEffect(
     () => {
       setAdvertisementsSearchParams({
-        q: search,
+        name: search,
       });
     },
     [search],

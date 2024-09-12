@@ -1,4 +1,4 @@
-export type { Advertisement, ShortAdvertisement } from './types';
+export type { Advertisement, ShortAdvertisement, AdvertisementPerPage } from './types';
 
 export {
   REDUCER_API_PATH,
@@ -12,3 +12,5 @@ export {
 export { useAdvertisementsSearchParams } from './hooks';
 
 export { AdvertisementCard } from './ui';
+
+export { ADVERTISEMENT_PER_PAGE } from './constants';

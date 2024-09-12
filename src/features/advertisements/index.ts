@@ -1,1 +1,1 @@
-export { AdvertisementList, AdvertisementSearch } from './ui';
+export { AdvertisementList, AdvertisementSearch, AdvertisementPagination } from './ui';
