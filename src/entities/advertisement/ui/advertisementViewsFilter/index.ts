@@ -1,0 +1,1 @@
+export { AdvertisementViewsFilter } from './advertisementViewsFilter';

@@ -12,7 +12,7 @@ const meta = {
     layout: 'centered',
     reactRouter: reactRouterParameters({
       routing: {
-        path: ROUTER_PATHS.HOME + ROUTER_PATHS.ADVERTISMENTS,
+        path: ROUTER_PATHS.HOME + ROUTER_PATHS.ADVERTISEMENTS,
       },
     }),
   },

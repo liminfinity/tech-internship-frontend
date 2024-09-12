@@ -7,8 +7,8 @@ import { ROUTER_PATHS } from '@/shared/constants';
 
 const items: ItemType[] = [
   {
-    key: ROUTER_PATHS.HOME + ROUTER_PATHS.ADVERTISMENTS,
-    label: <Link to={ROUTER_PATHS.ADVERTISMENTS}>Объявления</Link>,
+    key: ROUTER_PATHS.HOME + ROUTER_PATHS.ADVERTISEMENTS,
+    label: <Link to={ROUTER_PATHS.ADVERTISEMENTS}>Объявления</Link>,
     icon: <LuClipboardList />,
   },
   {

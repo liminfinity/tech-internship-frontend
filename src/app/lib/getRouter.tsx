@@ -1,3 +1,4 @@
+import { AdvertisementsPage } from '@/pages/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
 import { joinPaths } from '@/shared/lib';
@@ -9,7 +10,7 @@ export const getRouter = () => {
   router.push(
     {
       path: '*',
-      element: <Navigate to={ROUTER_PATHS.ADVERTISMENTS} />,
+      element: <Navigate to={ROUTER_PATHS.ADVERTISEMENTS} />,
     },
     {
       path: ROUTER_PATHS.HOME,
@@ -17,14 +18,14 @@ export const getRouter = () => {
       children: [
         {
           index: true,
-          element: <Navigate to={ROUTER_PATHS.ADVERTISMENTS} />,
+          element: <Navigate to={ROUTER_PATHS.ADVERTISEMENTS} />,
         },
         {
-          path: ROUTER_PATHS.ADVERTISMENTS,
-          element: <div>Объявления</div>,
+          path: ROUTER_PATHS.ADVERTISEMENTS,
+          element: <AdvertisementsPage />,
         },
         {
-          path: joinPaths(ROUTER_PATHS.ADVERTISMENTS, ROUTER_PATHS.ADVERTISMENT),
+          path: joinPaths(ROUTER_PATHS.ADVERTISEMENTS, ROUTER_PATHS.ADVERTISEMENT),
           element: <div>Объявление</div>,
         },
         {

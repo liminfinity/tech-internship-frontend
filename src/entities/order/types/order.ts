@@ -1,4 +1,4 @@
-import type { Advertisment } from '@/entities/advertisment';
+import type { Advertisement } from '@/entities/advertisement';
 import type { BaseEntity } from '@/shared/types';
 
 export const OrderStatus = {
@@ -26,4 +26,4 @@ export type Order = BaseEntity & {
   total: number;
 };
 
-export type OrderItem = Advertisment & { count: number };
+export type OrderItem = Advertisement & { count: number };

@@ -1,4 +1,18 @@
+@use './variables' as vars;
+@use 'sass:map';
+
 @mixin stiky($top: initial, $right: initial, $bottom: initial, $left: initial) {
   position: sticky;
   inset: $top $right $bottom $left;
+}
+
+@mixin container($max-width: map.get(vars.$max-width, container)) {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: map.get(vars.$paddings, default);
+  @content;
+}
+
+@mixin content {
+  flex: 1;
 }

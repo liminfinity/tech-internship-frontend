@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/variables' as vars;
+@use 'sass:map';
+
+.icon {
+  color: map.get(vars.$colors, danger);
+}
+
+.description {
+  font-size: map.get(vars.$font-sizes, md);
+}
