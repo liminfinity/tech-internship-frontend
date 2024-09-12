@@ -1,0 +1,10 @@
+@use '../../shared/styles/variables' as vars;
+@use 'sass:map';
+
+.info {
+  flex-basis: 70%;
+}
+
+.details {
+  flex-basis: 10%;
+}

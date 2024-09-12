@@ -18,3 +18,7 @@ export type Advertisement = BaseEntity & {
 };
 
 export type ShortAdvertisement = Omit<Advertisement, 'description' | 'createdAt'>;
+
+export type AdvertisementInfo = Pick<Advertisement, 'name' | 'imageUrl' | 'description'>;
+
+export type AdvertisementDetails = Pick<Advertisement, 'price' | 'views' | 'likes' | 'createdAt'>;

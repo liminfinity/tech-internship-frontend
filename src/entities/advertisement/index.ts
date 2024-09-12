@@ -14,15 +14,19 @@ export {
   useUpdateAdvertisementMutation,
 } from './api';
 
-export { useAdvertisementsSearchParams } from './hooks';
+export { useAdvertisementsSearchParams, useAdvertisementParams } from './hooks';
 
 export {
   AdvertisementCard,
   AdvertisementPriceFilter,
   AdvertisementLikesFilter,
   AdvertisementViewsFilter,
+  AdvertisementDetails,
+  AdvertisementInfo,
 } from './ui';
 
 export { ADVERTISEMENT_PER_PAGE } from './constants';
 
 export { addAdvertisementSchema } from './validation';
+
+export { getAdvertisementDetails, getAdvertisementInfo } from './lib';

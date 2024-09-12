@@ -1,0 +1,6 @@
+@use '../../../../shared/styles/variables' as vars;
+@use 'sass:map';
+
+.description {
+  padding-block-start: map.get(vars.$paddings, lg);
+}

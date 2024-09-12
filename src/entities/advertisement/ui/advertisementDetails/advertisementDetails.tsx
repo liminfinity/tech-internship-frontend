@@ -1,4 +1,4 @@
-import { Card, Flex, Typography } from 'antd';
+import { Flex, Typography } from 'antd';
 import type { AdvertisementDetailsProps } from './advertisementDetails.types';
 
 import { Likes, Views } from '@/shared/ui';
@@ -15,15 +15,13 @@ export const AdvertisementDetails = ({ details, className }: AdvertisementDetail
   const formattedDate = formatToCreatedAt(createdAt);
 
   return (
-    <Card className={className}>
-      <Flex vertical gap={GAPS.DEFAULT}>
-        <Title level={3}>{formattedPrice}</Title>
-        <Flex vertical wrap gap={GAPS.SM}>
-          <Likes likesCnt={likes} />
-          <Views viewsCnt={views} />
-          <Text>{formattedDate}</Text>
-        </Flex>
+    <Flex vertical gap={GAPS.DEFAULT} className={className}>
+      <Title level={2}>{formattedPrice}</Title>
+      <Flex vertical wrap gap={GAPS.SM}>
+        <Likes likesCnt={likes} />
+        <Views viewsCnt={views} />
+        <Text>{formattedDate}</Text>
       </Flex>
-    </Card>
+    </Flex>
   );
 };
