@@ -5,3 +5,4 @@ export { RangeSlider } from './rangeSlider';
 export { RHFInput } from './RHFInput';
 export { RHFInputNumber } from './RHFInputNumber';
 export { RHFTextArea } from './RHFTextArea';
+export { ImageOrEmpty } from './imageOrEmpty';

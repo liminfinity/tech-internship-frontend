@@ -1,6 +1,11 @@
-export type { Advertisement, ShortAdvertisement } from './advertisement';
+export type {
+  Advertisement,
+  ShortAdvertisement,
+  AdvertisementDetails,
+  AdvertisementInfo,
+} from './advertisement';
 
-export type { AddAdvertisementForm, UpdateAdvertisementForm } from './form';
+export type { AddAdvertisementForm, UpdateAdvertisementForm, AdvertisementForm } from './form';
 
 export type {
   AdvertisementParams,

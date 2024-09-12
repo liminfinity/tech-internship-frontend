@@ -1,3 +1,4 @@
+import { AdvertisementPage } from '@/pages/advertisement';
 import { AdvertisementsPage } from '@/pages/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
@@ -26,7 +27,7 @@ export const getRouter = () => {
         },
         {
           path: joinPaths(ROUTER_PATHS.ADVERTISEMENTS, ROUTER_PATHS.ADVERTISEMENT),
-          element: <div>Объявление</div>,
+          element: <AdvertisementPage />,
         },
         {
           path: ROUTER_PATHS.ORDERS,

@@ -1,0 +1,1 @@
+export { UpdateAdvertisementForm } from './updateAdvertisementForm';

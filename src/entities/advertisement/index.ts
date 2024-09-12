@@ -3,6 +3,7 @@ export type {
   ShortAdvertisement,
   AdvertisementPerPage,
   AddAdvertisementForm,
+  UpdateAdvertisementForm,
 } from './types';
 
 export {
@@ -14,15 +15,21 @@ export {
   useUpdateAdvertisementMutation,
 } from './api';
 
-export { useAdvertisementsSearchParams } from './hooks';
+export { useAdvertisementsSearchParams, useAdvertisementParams } from './hooks';
 
 export {
   AdvertisementCard,
   AdvertisementPriceFilter,
   AdvertisementLikesFilter,
   AdvertisementViewsFilter,
+  AdvertisementDetails,
+  AdvertisementInfo,
+  AdvertisementFormFields,
+  AdvertisementFormButtonGroup,
 } from './ui';
 
 export { ADVERTISEMENT_PER_PAGE } from './constants';
 
-export { addAdvertisementSchema } from './validation';
+export { addAdvertisementSchema, updateAdvertisementSchema } from './validation';
+
+export { getAdvertisementDetails, getAdvertisementInfo } from './lib';

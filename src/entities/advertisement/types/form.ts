@@ -1,9 +1,8 @@
 import type { z } from 'zod';
-import type { Advertisement } from './advertisement';
-import type { addAdvertisementSchema } from '../validation';
-
-type AdvertisementForm = Pick<Advertisement, 'imageUrl' | 'description' | 'name' | 'price'>;
+import type { addAdvertisementSchema, updateAdvertisementSchema } from '../validation';
 
 export type AddAdvertisementForm = z.infer<typeof addAdvertisementSchema>;
 
-export type UpdateAdvertisementForm = AdvertisementForm;
+export type UpdateAdvertisementForm = z.infer<typeof updateAdvertisementSchema>;
+
+export type AdvertisementForm = AddAdvertisementForm | UpdateAdvertisementForm;

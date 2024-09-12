@@ -1,9 +1,10 @@
-import { Card, Empty, Flex, Image, Typography } from 'antd';
+import { Card, Flex, Typography } from 'antd';
 import type { AdvertisementCardProps } from './advertisementCard.types';
 
-import { Likes, Views } from '@/shared/ui';
-import { useMemo } from 'react';
+import { ImageOrEmpty, Likes, Views } from '@/shared/ui';
 import { GAPS } from '@/shared/constants';
+import { formatPriceToRub } from '@/shared/lib';
+import styles from './advertisementCard.module.scss';
 
 const { Meta } = Card;
 
@@ -14,21 +15,14 @@ export const AdvertisementCard = ({ advertisement, className }: AdvertisementCar
 
   const altImg = `${name} image`;
 
-  const cover = useMemo(
-    () =>
-      imageUrl ? (
-        <Image src={imageUrl} alt={altImg} />
-      ) : (
-        <Empty description="Нет изображения" image={Empty.PRESENTED_IMAGE_SIMPLE} />
-      ),
-    [imageUrl, altImg],
-  );
-
-  const formattedPrice = price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' });
+  const formattedPrice = formatPriceToRub(price);
 
   return (
-    <Card hoverable className={className} cover={cover}>
-      <Flex vertical gap={GAPS.DEFAULT}>
+    <Card
+      hoverable
+      className={className}
+      cover={<ImageOrEmpty preview={false} src={imageUrl} alt={altImg} className={styles.image} />}>
+      <Flex vertical>
         <Meta
           title={<Text ellipsis>{name}</Text>}
           description={<Text ellipsis>{formattedPrice}</Text>}
