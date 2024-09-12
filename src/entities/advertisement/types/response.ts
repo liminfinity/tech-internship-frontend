@@ -6,3 +6,5 @@ export type GetAdvertisementsResponse = PaginationResponse & {
 };
 
 export type GetAdvertisementResponse = Advertisement;
+
+export type AddAdvertisementResponse = Pick<Advertisement, 'id'>;

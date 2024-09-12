@@ -3,6 +3,7 @@ import { API_PATHS, KEEP_UNUSED_DATA_FOR, REDUCER_API_PATH, TAGS } from './const
 import { baseQuery, METHODS } from '@/shared/api';
 import type {
   AddAdvertisementRequest,
+  AddAdvertisementResponse,
   GetAdvertisementResponse,
   GetAdvertisementsRequest,
   GetAdvertisementsResponse,
@@ -41,7 +42,7 @@ export const advertisementApi = createApi({
         { type: TAGS.ADVERTISEMENTS, id: advertisementId },
       ],
     }),
-    addAdvertisement: builder.mutation<void, AddAdvertisementRequest>({
+    addAdvertisement: builder.mutation<AddAdvertisementResponse, AddAdvertisementRequest>({
       query: (newAdvertisement) => ({
         url: API_PATHS.ADD_ADVERTISEMENT,
         method: METHODS.POST,

@@ -15,4 +15,8 @@ export type {
   UpdateAdvertisementRequest,
 } from './request';
 
-export type { GetAdvertisementResponse, GetAdvertisementsResponse } from './response';
+export type {
+  GetAdvertisementResponse,
+  GetAdvertisementsResponse,
+  AddAdvertisementResponse,
+} from './response';

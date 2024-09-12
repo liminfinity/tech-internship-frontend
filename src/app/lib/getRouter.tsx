@@ -1,3 +1,4 @@
+import { AddAdvertisementForm } from '@/features/addAdvertisement';
 import { AdvertisementsPage } from '@/pages/advertisements';
 import { HomeLayout } from '@/pages/homeLayout';
 import { ROUTER_PATHS } from '@/shared/constants';
@@ -30,7 +31,11 @@ export const getRouter = () => {
         },
         {
           path: ROUTER_PATHS.ORDERS,
-          element: <div>Заказы</div>,
+          element: (
+            <div>
+              Заказы <AddAdvertisementForm />
+            </div>
+          ),
         },
       ],
     },

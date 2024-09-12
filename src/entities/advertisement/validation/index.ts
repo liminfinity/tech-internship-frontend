@@ -1,0 +1,1 @@
+export { addAdvertisementSchema } from './addAdvertisement';
