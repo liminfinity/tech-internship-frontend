@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 .header {
-  @include mixins.stiky($top: 0);
+  @include mixins.stiky;
 
   z-index: map.get(vars.$z-index, header);
   display: flex;
