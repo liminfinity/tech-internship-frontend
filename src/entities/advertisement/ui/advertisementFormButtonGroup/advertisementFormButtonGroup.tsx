@@ -6,6 +6,7 @@ import type { AdvertisementForm } from '@/entities/advertisement/types';
 
 export const AdvertisementFormButtonGroup = ({
   isSubmitDisabled,
+  submitButtonText = 'Создать',
   onCancel,
   onReset,
   className,
@@ -29,7 +30,7 @@ export const AdvertisementFormButtonGroup = ({
         </Button>
       )}
       <Button type="primary" htmlType="submit" loading={isLoading} disabled={isSubmitDisabled}>
-        Создать
+        {submitButtonText}
       </Button>
     </Flex>
   );

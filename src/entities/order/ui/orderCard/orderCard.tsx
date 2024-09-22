@@ -1,9 +1,10 @@
 import { Card, Flex, Typography } from 'antd';
 import type { OrderCardProps } from './orderCard.types';
 import { GAPS } from '@/shared/constants';
-import { formatPriceToRub, formatToCreatedAt } from '@/shared/lib';
+import { cn, formatPriceToRub, formatToCreatedAt } from '@/shared/lib';
 import { OrderItemsButton } from '../orderItemsButton';
 import { ORDER_STATUS_CODE } from '../../constants';
+import styles from './orderCard.module.scss';
 
 const { Text } = Typography;
 
@@ -21,16 +22,16 @@ export const OrderCard = ({ order, className }: OrderCardProps) => {
   const formattedDeliveryWay = `Способ доставки: ${deliveryWay}`;
 
   return (
-    <Card className={className}>
-      <Flex vertical>
-        <Flex justify="space-between" vertical gap={GAPS.SM}>
+    <Card className={cn(styles.card, className)}>
+      <Flex justify="space-between" className={styles.content} vertical gap={GAPS.SM}>
+        <Flex vertical gap={GAPS.SM}>
           <Text strong>{formattedStatus}</Text>
           <Text>{formattedTotal}</Text>
           <Text type="secondary">{formattedCreatedAt}</Text>
           <Text>{formattedDeliveryWay}</Text>
           {finishedAt && <Text type="success">{finishedText}</Text>}
-          <OrderItemsButton orderItems={items} />
         </Flex>
+        <OrderItemsButton orderItems={items} />
       </Flex>
     </Card>
   );

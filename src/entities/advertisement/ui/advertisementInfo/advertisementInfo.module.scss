@@ -4,3 +4,7 @@
 .description {
   padding-block-start: map.get(vars.$paddings, lg);
 }
+
+.image {
+  flex-shrink: 0;
+}

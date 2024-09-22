@@ -1,6 +1,6 @@
 export type { Order, OrderItem, OrderPerPage } from './types';
 
-export { orderApi, REDUCER_API_PATH, useGetOrdersQuery } from './api';
+export { orderApi, REDUCER_API_PATH, useGetOrdersQuery, TAGS } from './api';
 
 export { useOrdersSearchParams } from './hooks';
 

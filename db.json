@@ -2,13 +2,13 @@
   "advertisements": [
     {
       "id": "1",
-      "name": "Стул старинный",
+      "name": "Стул",
       "description": "Очень красивый",
-      "price": 2000,
+      "price": 232,
       "createdAt": "2022-08-12T20:16:55.351Z",
       "views": 20,
       "likes": 2,
-      "imageUrl": ""
+      "imageUrl": "https://images.wallpaperscraft.com/image/sile/lak_tree_36589_2650x1600.jpg"
     },
     {
       "id": "2",
@@ -75,22 +75,37 @@
       "createdAt": "2024-08-12T12:16:55.351Z",
       "views": 200000,
       "likes": 302,
-      "imageUrl": ""
+      "imageUrl": "https://images.wallpaperscraft.com/image/sile/lak_tree_36589_2650x1600.jpg"
     },
     {
-      "id": "b7bc",
-      "name": "c7f7r7f",
-      "price": 3545
+      "id": "b898",
+      "imageUrl": "",
+      "name": "Пальто",
+      "price": 323,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T16:59:21.545Z"
     },
     {
-      "id": "d263",
-      "name": "afaf",
-      "price": 213
+      "id": "82ef",
+      "imageUrl": "",
+      "name": "Морковь",
+      "price": 342,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T18:06:11.852Z"
     },
     {
-      "id": "27c7",
-      "name": "313",
-      "price": 77
+      "id": "9fcb",
+      "imageUrl": "",
+      "name": "Говядина",
+      "price": 2343,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T18:06:27.611Z"
     }
   ],
   "orders": [

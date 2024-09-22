@@ -1,9 +1,9 @@
 @use './variables' as vars;
 @use 'sass:map';
 
-@mixin stiky($top: initial, $right: initial, $bottom: initial, $left: initial) {
+@mixin stiky($inset: 0) {
   position: sticky;
-  inset: $top $right $bottom $left;
+  inset: $inset;
 }
 
 @mixin container($max-width: map.get(vars.$max-width, container)) {
@@ -15,4 +15,10 @@
 
 @mixin content {
   flex: 1;
+}
+
+@mixin flex($dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  @content;
 }

@@ -30,16 +30,16 @@ export const UpdateAdvertisementForm = ({
 
   const { handleSubmit, reset, formState } = methods;
 
-  const { isDirty } = formState;
+  const { isDirty, isValid } = formState;
 
-  const isSubmitDisabled = !isDirty;
+  const isSubmitDisabled = !isDirty || !isValid;
 
   const [updateAdvertisement] = useUpdateAdvertisementMutation();
 
   const handleUpdateAdvertisement = useCallback(
     async (updatedAdvertisement: TUpdateAdvertisementForm) => {
       await updateAdvertisement({ ...updatedAdvertisement, advertisementId });
-      reset();
+      reset(updatedAdvertisement);
       onSubmit?.();
     },
     [updateAdvertisement, onSubmit, reset, advertisementId],
@@ -65,6 +65,7 @@ export const UpdateAdvertisementForm = ({
         <AdvertisementFormFields />
         <AdvertisementFormButtonGroup
           isSubmitDisabled={isSubmitDisabled}
+          submitButtonText={'Редактировать'}
           onCancel={handleCancel}
           onReset={handleReset}
         />

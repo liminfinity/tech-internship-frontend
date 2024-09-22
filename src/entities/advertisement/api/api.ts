@@ -11,6 +11,7 @@ import type {
 } from '../types';
 import { joinPaths, toParamsRequest } from '@/shared/lib';
 import snakify from 'snakify-ts';
+import { mapNewAdvertisement } from '../lib';
 
 const TAG_TYPES = Object.values(TAGS);
 
@@ -45,7 +46,7 @@ export const advertisementApi = createApi({
       query: (newAdvertisement) => ({
         url: API_PATHS.ADD_ADVERTISEMENT,
         method: METHODS.POST,
-        body: newAdvertisement,
+        body: mapNewAdvertisement(newAdvertisement),
       }),
       invalidatesTags: [TAGS.ADVERTISEMENTS],
     }),
