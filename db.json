@@ -2,13 +2,13 @@
   "advertisements": [
     {
       "id": "1",
-      "name": "Стул старинный",
+      "name": "стуллкпыпr",
       "description": "Очень красивый",
-      "price": 2000,
+      "price": 232,
       "createdAt": "2022-08-12T20:16:55.351Z",
       "views": 20,
       "likes": 2,
-      "imageUrl": ""
+      "imageUrl": "https://images.wallpaperscraft.com/image/sile/lak_tree_36589_2650x1600.jpg"
     },
     {
       "id": "2",
@@ -76,6 +76,16 @@
       "views": 200000,
       "likes": 302,
       "imageUrl": ""
+    },
+    {
+      "id": "b898",
+      "imageUrl": "",
+      "name": "Полешко Артём КИ22-21Б",
+      "price": 323,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T16:59:21.545Z"
     }
   ],
   "orders": [
