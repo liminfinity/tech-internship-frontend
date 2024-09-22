@@ -1,0 +1,16 @@
+@use '../../../../shared/styles/mixins' as mixins;
+
+.card,
+.item.item.item {
+  flex: 1;
+}
+
+.item.item.item {
+  @include mixins.flex($dir: column) {
+    align-items: stretch;
+  }
+}
+
+.item.item.item {
+  height: 250px;
+}

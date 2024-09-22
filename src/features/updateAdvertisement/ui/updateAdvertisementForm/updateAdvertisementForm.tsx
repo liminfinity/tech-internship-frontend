@@ -65,6 +65,7 @@ export const UpdateAdvertisementForm = ({
         <AdvertisementFormFields />
         <AdvertisementFormButtonGroup
           isSubmitDisabled={isSubmitDisabled}
+          submitButtonText={'Редактировать'}
           onCancel={handleCancel}
           onReset={handleReset}
         />

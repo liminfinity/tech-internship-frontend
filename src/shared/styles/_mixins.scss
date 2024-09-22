@@ -16,3 +16,9 @@
 @mixin content {
   flex: 1;
 }
+
+@mixin flex($dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  @content;
+}

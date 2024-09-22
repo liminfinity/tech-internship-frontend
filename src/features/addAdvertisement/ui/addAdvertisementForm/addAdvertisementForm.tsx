@@ -62,6 +62,7 @@ export const AddAdvertisementForm = ({ onSubmit, className }: AddAdvertisementFo
         <AdvertisementFormFields />
         <AdvertisementFormButtonGroup
           isSubmitDisabled={isSubmitDisabled}
+          submitButtonText={'Создать'}
           onCancel={handleCancel}
           onReset={handleReset}
         />

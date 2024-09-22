@@ -2,7 +2,7 @@
   "advertisements": [
     {
       "id": "1",
-      "name": "стуллкпыпr",
+      "name": "Стул",
       "description": "Очень красивый",
       "price": 232,
       "createdAt": "2022-08-12T20:16:55.351Z",
@@ -75,17 +75,37 @@
       "createdAt": "2024-08-12T12:16:55.351Z",
       "views": 200000,
       "likes": 302,
-      "imageUrl": ""
+      "imageUrl": "https://images.wallpaperscraft.com/image/sile/lak_tree_36589_2650x1600.jpg"
     },
     {
       "id": "b898",
       "imageUrl": "",
-      "name": "Полешко Артём КИ22-21Б",
+      "name": "Пальто",
       "price": 323,
       "description": "",
       "views": 0,
       "likes": 0,
       "createdAt": "2024-09-22T16:59:21.545Z"
+    },
+    {
+      "id": "82ef",
+      "imageUrl": "",
+      "name": "Морковь",
+      "price": 342,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T18:06:11.852Z"
+    },
+    {
+      "id": "9fcb",
+      "imageUrl": "",
+      "name": "Говядина",
+      "price": 2343,
+      "description": "",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-22T18:06:27.611Z"
     }
   ],
   "orders": [

@@ -9,6 +9,7 @@ import {
 } from './orderList.constants';
 import { useGetOrdersQuery, useOrdersSearchParams } from '@/entities/order';
 import { OrderCard } from '@/entities/order';
+import styles from './orderList.module.scss';
 
 export const OrderList = ({ className }: OrderListProps) => {
   const { page, perPage, sort, status } = useOrdersSearchParams();
@@ -32,8 +33,8 @@ export const OrderList = ({ className }: OrderListProps) => {
           dataSource={data.data}
           grid={GRID_SETTINGS}
           renderItem={(order) => (
-            <List.Item key={order.id}>
-              <OrderCard order={order} />
+            <List.Item key={order.id} className={styles.item}>
+              <OrderCard order={order} className={styles.card} />
             </List.Item>
           )}
         />

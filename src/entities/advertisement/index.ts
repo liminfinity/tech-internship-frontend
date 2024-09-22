@@ -13,6 +13,7 @@ export {
   useGetAdvertisementQuery,
   useAddAdvertisementMutation,
   useUpdateAdvertisementMutation,
+  TAGS,
 } from './api';
 
 export { useAdvertisementsSearchParams, useAdvertisementParams } from './hooks';

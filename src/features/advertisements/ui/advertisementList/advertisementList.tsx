@@ -12,6 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import { joinPaths } from '@/shared/lib';
 import { ROUTER_PATHS } from '@/shared/constants';
+import styles from './advertisementList.module.scss';
 
 export const AdvertisementList = ({ className }: AdvertisementListProps) => {
   const { name, page, perPage, likesGte, likesLte, viewsGte, viewsLte, priceGte, priceLte } =
@@ -41,10 +42,11 @@ export const AdvertisementList = ({ className }: AdvertisementListProps) => {
           dataSource={data.data}
           grid={GRID_SETTINGS}
           renderItem={(advertisement) => (
-            <List.Item key={advertisement.id}>
+            <List.Item key={advertisement.id} className={styles.item}>
               <Link
+                className={styles.link}
                 to={joinPaths(ROUTER_PATHS.HOME + ROUTER_PATHS.ADVERTISEMENTS, advertisement.id)}>
-                <AdvertisementCard advertisement={advertisement} />
+                <AdvertisementCard advertisement={advertisement} className={styles.card} />
               </Link>
             </List.Item>
           )}

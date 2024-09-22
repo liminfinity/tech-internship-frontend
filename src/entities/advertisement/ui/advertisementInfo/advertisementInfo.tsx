@@ -17,7 +17,7 @@ export const AdvertisementInfo = ({ info, className }: AdvertisementInfoProps) =
       <Title copyable level={1}>
         {name}
       </Title>
-      <ImageOrEmpty src={imageUrl} alt={altImg} />
+      <ImageOrEmpty src={imageUrl} alt={altImg} className={styles.image} />
       {description && (
         <Flex vertical gap={GAPS.SM} className={styles.description}>
           <Title copyable={{ text: description }} level={3}>

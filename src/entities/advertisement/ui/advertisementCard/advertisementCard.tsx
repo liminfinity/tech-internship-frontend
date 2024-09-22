@@ -3,7 +3,7 @@ import type { AdvertisementCardProps } from './advertisementCard.types';
 
 import { ImageOrEmpty, Likes, Views } from '@/shared/ui';
 import { GAPS } from '@/shared/constants';
-import { formatPriceToRub } from '@/shared/lib';
+import { cn, formatPriceToRub } from '@/shared/lib';
 import styles from './advertisementCard.module.scss';
 
 const { Meta } = Card;
@@ -20,9 +20,9 @@ export const AdvertisementCard = ({ advertisement, className }: AdvertisementCar
   return (
     <Card
       hoverable
-      className={className}
+      className={cn(styles.card, className)}
       cover={<ImageOrEmpty preview={false} src={imageUrl} alt={imgAlt} className={styles.image} />}>
-      <Flex vertical>
+      <Flex vertical gap={GAPS.SM}>
         <Meta
           title={<Text ellipsis>{name}</Text>}
           description={<Text ellipsis>{formattedPrice}</Text>}
